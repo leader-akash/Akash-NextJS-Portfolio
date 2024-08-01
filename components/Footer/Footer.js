@@ -11,7 +11,7 @@ const Footer = () => {
         <div className={styles.container}>
             <div className={styles.footer}>
                 <div className={styles.top_row}>
-                    <p>&#169; copyright reserved 2021</p>
+                    <p>&#169; copyright reserved {new Date().getFullYear()}</p>
                     <div className={styles.logo_con}>
                         <Logo />
                         <p>Made with <FaHeart /> & imagination by <b>Akash</b>.</p>
