@@ -76,7 +76,7 @@ export default function Home() {
                         </div>
                         {load && <FifthSection />}
                         {load && <SixthSection />}
-                        {load && <SeventhSection />}
+                        {/* {load && <SeventhSection />} */}
                     </div>
                 </div>
             </div>
