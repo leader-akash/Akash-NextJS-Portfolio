@@ -52,7 +52,7 @@ const ThirdSection = () => {
                     <div className={styles.text}>
                         <span>a</span>
                         <span>long way <span>ahead</span></span>
-                        <span>lot more to <span>acheive</span></span>
+                        <span>lot more to <span>achieve</span></span>
                     </div>
                     <Blob className={styles.blob} />
                 </div>

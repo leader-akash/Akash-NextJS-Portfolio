@@ -76,7 +76,7 @@ function About({ lefRef }) {
     return (
         <div ref={(el) => sectionRefs[0] = el} className={styles.about_con} id='ab_con'>
             <span className={styles.shadow_T} >about</span>
-            <p className={styles.title + ' about_animation'}>I&apos;m a Aspiring Full Stack Web Developer. </p>
+            <p className={styles.title + ' about_animation'}>I&apos;m an Aspiring Full Stack Web Developer. </p>
             <blockquote className={styles.quote + ' about_animation'}>I enjoy the challenge of creating something new from scartch, and that&apos;s drive me to push my creative imagination</blockquote>
         </div>
     )
