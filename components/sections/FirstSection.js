@@ -25,10 +25,10 @@ const FirstSection = ({ load }) => {
                     <span className={styles.shadow_T}>intro</span>
                     <h1 id="introText">Hi, I am <span>Akash</span></h1>
 
-                    <h3 className='introSkills'>Aspiring <br /> Full Stack Web Developer</h3>
+                    <h3 className='introSkills'>Full Stack Web Developer</h3>
                     {/* <h3 className='introSkills'>Web Developer</h3> */}
-                    {/* <h3 className='introSkills'>Software Engineer</h3> */}
-                    <a target="_blank" rel='noreferrer' href="https://drive.google.com/file/d/1Xi8XwAGVU_CnqcdzuI-QPyGEa2bGCxUT/view?usp=sharing" id="resume">Resume</a>
+                    <h3 className='introSkills'>Software Engineer</h3>
+                    <a target="_blank" rel='noreferrer' href="https://docs.google.com/document/d/1zguaTBC8IyIJZ_RATeWwgp-zM7huesLH/edit?usp=sharing&ouid=108182985395788936094&rtpof=true&sd=true" id="resume">Resume</a>
                     <div className={styles.scrollDown} id="scrollDown">
                         <span></span>
                         <span></span>
