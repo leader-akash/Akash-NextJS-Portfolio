@@ -15,6 +15,12 @@
         flex-wrap: wrap;
         margin-bottom: 4em;
     }
+    .top_cards,
+    .bottom_cards,
+    .mb_cards {
+        opacity: 1;
+        visibility: visible;
+    }
     .card {
         padding: 1.4em;
         margin: 4em 2em;

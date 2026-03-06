@@ -9,6 +9,16 @@ import { sectionRefs } from '../../constants/HelperFunctions'
 
 const FirstSection = ({ load }) => {
     const leftCol = useRef(null);
+
+    const onAuthorImageLoad = () => {
+        gsap.to('.arr_ele', {
+            autoAlpha: 1,
+            stagger: 0.02,
+            duration: 0.5,
+            ease: 'power2.out',
+        });
+    };
+
     useEffect(() => {
         const media = window.matchMedia('(max-width:850px)')
         if (media.matches) {
@@ -16,6 +26,11 @@ const FirstSection = ({ load }) => {
         } else {
             mbInitAnimation()
         }
+        const t = setTimeout(() => {
+            const img = document.getElementById('author_image') ?? document.querySelector('#rightCol img');
+            if (img?.complete) onAuthorImageLoad();
+        }, 100);
+        return () => clearTimeout(t);
     }, [])
 
     return (
@@ -47,6 +62,7 @@ const FirstSection = ({ load }) => {
                         placeholder="blur"
                         className={styles.author_image}
                         id='author_image'
+                        onLoad={onAuthorImageLoad}
                     />
 
                 </div>
@@ -122,12 +138,8 @@ function initAnimation() {
         y: -30,
         transformOrigin: 'center',
         ease: 'power3.out',
-    }).to('.arr_ele', {
-        autoAlpha: 1,
-        stagger: 0.02,
-        duration: 0.5,
-        ease: 'power2.out',
     })
+    // Arrow (black line) reveals in onAuthorImageLoad after profile image loads
 }
 
 
@@ -157,12 +169,6 @@ function mbInitAnimation() {
         autoAlpha: 0,
         scale: .9,
         duration: .5,
-    }).to('.arr_ele', {
-        duration: 0.2,
-        delay: .2,
-        autoAlpha: 1,
-        stagger: -0.03,
-        ease: "power4.out",
     }).from('#resume', .2, {
         autoAlpha: 0,
         transformOrigin: 'center',
@@ -199,22 +205,8 @@ function scrollAnimation(lefRef, screen) {
             scrub: 1,
         }
     })
-    // Dashed line (arrow) draws in on scroll – "black vali line" animation
-    scrollAnimation.from('.arr_ele', {
-        autoAlpha: 0,
-        stagger: 0.02,
-        ease: 'power2.out',
-        duration: 0.4,
-    }, 0).to('.arr_ele', {
-        duration: 0.5,
-        autoAlpha: 0,
-        stagger: 0.05,
-        scrollTrigger: {
-            scrub: 1,
-            end: '+=200',
-        },
-        ease: "power2.in",
-    }).from('.about_animation', {
+    // Arrow stays visible on scroll and off scroll (no fade-out)
+    scrollAnimation.from('.about_animation', {
         autoAlpha: 0,
         scale: .5,
         x: -100,

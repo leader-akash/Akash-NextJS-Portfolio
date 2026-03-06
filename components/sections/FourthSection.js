@@ -11,7 +11,6 @@ const FourthSection = () => {
         name: "React JS",
         info: "Powerful modern frontend framework for building single page application",
         stars: "4.5",
-        ex: "2 years building and debugging",
     })
     useEffect(() => {
         const skillClickTimeline = skillClickAnimation()
@@ -55,14 +54,10 @@ const FourthSection = () => {
                     <p>{skillInfo.info}</p>
                     <div className={styles.info}>
                         <div className={styles.stars}>
-                            <label>Confidence:</label>
-                            <span className='star_con'>
+                            <label>Confidence</label>
+                            <span style={{ display: 'flex' }}>
                                 {loadStars(skillInfo.stars)}
                             </span>
-                        </div>
-                        <div>
-                            <label>Experience:</label>
-                            <span className={styles.ex}>{skillInfo.ex}</span>
                         </div>
                     </div>
                     <span className={styles.tag}>growing more</span>
@@ -78,7 +73,6 @@ function skillClickAnimation() {
     const tl = gsap.timeline({ paused: true })
     tl.to(`.${styles.text} h2,
         .${styles.text} p,
-        .${styles.ex},
         .star_con`, {
         yPercent: 20,
         autoAlpha: 0,

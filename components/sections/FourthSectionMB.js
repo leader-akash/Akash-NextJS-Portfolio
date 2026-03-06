@@ -65,10 +65,6 @@ const generateCard = (index) => {
                         {loadStars(SkillData[index].stars)}
                     </span>
                 </div>
-                <div>
-                    <label>Experience:</label>
-                    <span className={styles.ex}>{SkillData[index].ex}</span>
-                </div>
             </div>
         </div>
     )
