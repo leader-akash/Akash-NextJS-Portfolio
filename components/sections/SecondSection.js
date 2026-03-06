@@ -95,17 +95,17 @@ const scrollAnimation = (screen) => {
     tl.to('#lottie', {
         scale: .85,
         duration: 0.4,
-    }, '-=1').from('.left_dash', {
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.2,
-        ease: 'power4.out'
-    }, '-=1').from('.right_dash', {
-        opacity: 0,
-        stagger: 0.1,
+    }, '-=1').to('.left_dash', {
+        opacity: 1,
+        stagger: 0.02,
+        duration: 0.35,
+        ease: 'power2.out',
+    }, '-=1').to('.right_dash', {
+        opacity: 1,
+        stagger: 0.02,
         delay: -1.9,
-        duration: 0.2,
-        ease: 'power4.out'
+        duration: 0.35,
+        ease: 'power2.out',
     }, '-=1').from('.top_cards', {
         scale: 0.5,
         autoAlpha: 0,

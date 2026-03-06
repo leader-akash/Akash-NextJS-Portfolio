@@ -41,7 +41,7 @@ const Header = () => {
                 document.documentElement.style.overflowY = 'overlay'
             }
         }
-        media.addListener((e) => handleMatch(e.matches));
+        media.addEventListener('change', (e) => handleMatch(e.matches));
         handleMatch(media.matches);
 
 
@@ -120,19 +120,11 @@ const Header = () => {
                         <Logo />
                     </div>
                     <div className={styles.links} id='links'>
-                        <Link href="https://www.linkedin.com/in/hi-akash/">
-                            <a target="_blank" className='p-link'><RiLinkedinLine /></a>
-                        </Link>
+                        <Link href="https://www.linkedin.com/in/hi-akash/" target="_blank" rel="noopener noreferrer" className='p-link'><RiLinkedinLine /></Link>
                         {/* <Link href="/projects"> */}
-                        <Link href="https://github.com/leader-akash">
-                            <a target="_blank" className='p-link'><FiGithub /></a>
-                        </Link>
-                        <Link href="https://twitter.com/AkashAk50675432">
-                            <a target="_blank" className='p-link'><RiTwitterLine /></a>
-                        </Link>
-                        <Link href="mailto:leader.akashak@gmail.com">
-                            <a target="_blank" className='p-link'><HiOutlineMail /></a>
-                        </Link>
+                        <Link href="https://github.com/leader-akash" target="_blank" rel="noopener noreferrer" className='p-link'><FiGithub /></Link>
+                        <Link href="https://twitter.com/AkashAk50675432" target="_blank" rel="noopener noreferrer" className='p-link'><RiTwitterLine /></Link>
+                        <Link href="mailto:leader.akashak@gmail.com" target="_blank" rel="noopener noreferrer" className='p-link'><HiOutlineMail /></Link>
                         {/* </Link> */}
                         <input
                             id={styles.themeSwitcher}
@@ -173,13 +165,11 @@ const Header = () => {
                         <li onClick={() => navToggle(sectionRefs[5])}><a id="6" ref={(el) => mobNavRef[5] = el} ><FiMessageCircle />Contact</a></li>
                     </ul>
                     <div className={styles.mb_links}>
-                        <Link href="https://www.linkedin.com/in/hi-akash/">
-                            <a target="_blank" className='mb-link'><RiLinkedinLine /></a>
-                        </Link>
+                        <Link href="https://www.linkedin.com/in/hi-akash/" target="_blank" rel="noopener noreferrer" className='mb-link'><RiLinkedinLine /></Link>
                         {/* <Link href="/projects"> */}
-                        <a className='mb-link' href="https://github.com/leader-akash"><FiGithub /></a>
-                        <a className='mb-link' href="https://twitter.com/AkashAk50675432"><RiTwitterLine /></a>
-                        <a className='mb-link' href="mailto:leader.akashak@gmail.com"><HiOutlineMail /></a>
+                        <Link href="https://github.com/leader-akash" target="_blank" rel="noopener noreferrer" className='mb-link'><FiGithub /></Link>
+                        <Link href="https://twitter.com/AkashAk50675432" target="_blank" rel="noopener noreferrer" className='mb-link'><RiTwitterLine /></Link>
+                        <Link href="mailto:leader.akashak@gmail.com" target="_blank" rel="noopener noreferrer" className='mb-link'><HiOutlineMail /></Link>
                     </div>
                 </div>
             </div>

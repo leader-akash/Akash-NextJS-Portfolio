@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 gsap.registerPlugin(ScrollToPlugin);
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.core.globals('ScrollTrigger', ScrollTrigger);
+
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
         let vh = window.innerHeight * 0.01

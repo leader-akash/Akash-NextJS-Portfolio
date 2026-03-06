@@ -25,10 +25,9 @@ const FirstSection = ({ load }) => {
                     <span className={styles.shadow_T}>intro</span>
                     <h1 id="introText">Hi, I am <span>Akash</span></h1>
 
+                    <h3 className='introSkills'>Aspiring</h3>
                     <h3 className='introSkills'>Full Stack Web Developer</h3>
-                    {/* <h3 className='introSkills'>Web Developer</h3> */}
-                    <h3 className='introSkills'>Software Engineer</h3>
-                    <a target="_blank" rel='noreferrer' href="https://docs.google.com/document/d/1zguaTBC8IyIJZ_RATeWwgp-zM7huesLH/edit?usp=sharing&ouid=108182985395788936094&rtpof=true&sd=true" id="resume">Resume</a>
+                    <a target="_blank" rel='noreferrer' href="https://drive.google.com/file/d/1NrchWnHTnLQO4pKYkI3EVSKch_CXnRv4/view?usp=sharing" id="resume">Resume</a>
                     <div className={styles.scrollDown} id="scrollDown">
                         <span></span>
                         <span></span>
@@ -43,10 +42,10 @@ const FirstSection = ({ load }) => {
                     <Image
                         src={author}
                         alt="Picture of the author"
-                        priority='true'
-                        layout="fill"
-                        quality='75'
-                        placeholder='blur'
+                        priority
+                        fill
+                        quality={75}
+                        placeholder="blur"
                         className={styles.author_image}
                         id='author_image'
                     />
@@ -76,8 +75,8 @@ function About({ lefRef }) {
     return (
         <div ref={(el) => sectionRefs[0] = el} className={styles.about_con} id='ab_con'>
             <span className={styles.shadow_T} >about</span>
-            <p className={styles.title + ' about_animation'}>I&apos;m an Aspiring Full Stack Web Developer. </p>
-            <blockquote className={styles.quote + ' about_animation'}>I enjoy the challenge of creating something new from scartch, and that&apos;s drive me to push my creative imagination</blockquote>
+            <p className={styles.title + ' about_animation'}>I&apos;m an Aspiring Full Stack Web Developer.</p>
+            <blockquote className={styles.quote + ' about_animation'}>I enjoy the challenge of creating something new from scratch, and that&apos;s what drives me to push my creative imagination.</blockquote>
         </div>
     )
 }
@@ -180,19 +179,29 @@ function scrollAnimation(lefRef, screen) {
             scrub: true,
             start: 'top+=70 bottom-=100',
             end: '+=50',
-            onLeaveBack: () => document.querySelector('#scrollDown').style.opacity = 1,
+            onLeaveBack: () => {
+                const scrollDown = document.querySelector('#scrollDown');
+                if (scrollDown) scrollDown.style.opacity = 1;
+            },
         }
     })
+    const leftHeight = lefRef.current?.offsetHeight ?? 0
     const scrollAnimation = gsap.timeline({
         scrollTrigger: {
             trigger: '#rightCol',
             start: `top top`,
-            end: `+=${lefRef.current.offsetHeight} bottom`,
+            end: `+=${leftHeight} bottom`,
             pin: true,
             scrub: 1,
         }
     })
-    scrollAnimation.to('.arr_ele', {
+    // Dashed line (arrow) draws in on scroll – "black vali line" animation
+    scrollAnimation.from('.arr_ele', {
+        autoAlpha: 0,
+        stagger: 0.02,
+        ease: 'power2.out',
+        duration: 0.4,
+    }, 0).to('.arr_ele', {
         duration: 0.5,
         autoAlpha: 0,
         stagger: 0.05,

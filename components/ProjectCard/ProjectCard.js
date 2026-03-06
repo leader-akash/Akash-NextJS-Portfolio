@@ -48,9 +48,9 @@ const ProjectCard = ({ info, index, layout, id }) => {
                     <Image
                         src={info.image}
                         alt={`${info.name} project screenshot`}
-                        layout="fill"
-                        quality='50'
-                        placeholder='blur'
+                        fill
+                        quality={50}
+                        placeholder="blur"
                         className={styles.projectImg}
                         id='author_image'
                     />

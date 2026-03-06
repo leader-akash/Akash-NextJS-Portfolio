@@ -111,7 +111,9 @@ function scrollAnimation() {
             if (activeSkill) {
                 activeSkill.classList.add(skillCSS.active)
             } else {
-                document.querySelectorAll(`.${skillClass}`)[8].classList.add(skillCSS.active)
+                const skillEls = document.querySelectorAll(`.${skillClass}`)
+                const ninth = skillEls[8]
+                if (ninth) ninth.classList.add(skillCSS.active)
             }
         },
         scrollTrigger: {

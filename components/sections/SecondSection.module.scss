@@ -98,6 +98,14 @@
                 left: unset;
                 right: -51%;
             }
+            path {
+                opacity: 0;
+            }
         }
     }
+}
+/* Dashed lines animate in on scroll – ScrollTrigger reveals .left_dash / .right_dash */
+.left_dash,
+.right_dash {
+    opacity: 0;
 }

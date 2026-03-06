@@ -17,19 +17,11 @@ const Footer = () => {
                         <p>Made with <FaHeart /> & imagination by <b>Akash</b>.</p>
                     </div>
                     <div className={styles.social_con}>
-                        <Link href="https://www.linkedin.com/in/hi-akash/">
-                            <a target="_blank" className='p-link'><RiLinkedinLine /></a>
-                        </Link>
+                        <Link href="https://www.linkedin.com/in/hi-akash/" target="_blank" rel="noopener noreferrer" className='p-link'><RiLinkedinLine /></Link>
                         {/* <Link href="/projects"> */}
-                        <Link href="https://github.com/leader-akash">
-                            <a target="_blank" className='p-link'><FiGithub /></a>
-                        </Link>
-                        <Link href="https://twitter.com/AkashAk50675432">
-                            <a target="_blank" className='p-link'><RiTwitterLine /></a>
-                        </Link>
-                        <Link href="mailto:leader.akashak@gmail.com">
-                            <a target="_blank" className='p-link'><HiOutlineMail /></a>
-                        </Link>
+                        <Link href="https://github.com/leader-akash" target="_blank" rel="noopener noreferrer" className='p-link'><FiGithub /></Link>
+                        <Link href="https://twitter.com/AkashAk50675432" target="_blank" rel="noopener noreferrer" className='p-link'><RiTwitterLine /></Link>
+                        <Link href="mailto:leader.akashak@gmail.com" target="_blank" rel="noopener noreferrer" className='p-link'><HiOutlineMail /></Link>
                     </div>
                 </div>
                 <div className={styles.bottom_row}>

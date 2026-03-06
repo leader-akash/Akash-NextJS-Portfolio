@@ -38,7 +38,7 @@ export default function Home() {
                 setMobileView(false)
             }
         }
-        media.addListener((e) => handleMatch(e.matches))
+        media.addEventListener('change', (e) => handleMatch(e.matches))
         handleMatch(media.matches)
     }, [])
 

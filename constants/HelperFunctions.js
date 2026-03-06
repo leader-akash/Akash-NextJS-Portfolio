@@ -152,10 +152,10 @@ export const SkillData = {
     },
     8: {
         icon: SiReact,
-        name: 'React.js',
+        name: 'React JS',
         info: 'Powerful modern frontend framework for building single page application',
         stars: "4.5",
-        ex: "2 years of building and debugging",
+        ex: "2 years building and debugging",
     },
     9: {
         icon: SiRedux,
