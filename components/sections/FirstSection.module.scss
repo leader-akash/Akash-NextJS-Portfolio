@@ -226,9 +226,12 @@
             padding: 2em;
             clip-path: url(#clip);
             background-color: get(image-bg-color);
+            right: 0;
+            left: auto;
             @include media("<1200px") {
                 width: 25.5em;
                 height: 23.5em;
+                right: -0.5em;
             }
             @include media("<laptop") {
                 width: 24em;
@@ -238,22 +241,21 @@
                 width: 20em;
                 height: 18em;
                 margin-top: 5em;
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
             }
             @include media(">1440px", "height>750px") {
                 width: 30em;
                 height: 28em;
             }
-            & > div {
-                position: unset !important;
-                overflow: visible !important;
-            }
             .author_image {
                 visibility: hidden;
                 transform-origin: center;
-                object-fit: contain;
+                object-fit: contain !important;
                 width: 100% !important;
+                height: 100% !important;
                 position: relative !important;
-                height: unset !important;
                 filter: drop-shadow(-16px 15px 24px #00000090) !important;
             }
         }

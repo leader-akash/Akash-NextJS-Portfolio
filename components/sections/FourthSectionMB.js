@@ -57,17 +57,13 @@ const generateCard = (index) => {
                 {getSkillIcon(index, 'Skill')}
                 <span>{SkillData[index].name}</span>
             </div>
-            <p>{SkillData[8].info}</p>
+            <p>{SkillData[index].info}</p>
             <div className={styles.rating}>
                 <div className={styles.stars}>
                     <label>Confidence:</label>
                     <span className={styles.star_con}>
                         {loadStars(SkillData[index].stars)}
                     </span>
-                </div>
-                <div>
-                    <label>Experience:</label>
-                    <span className={styles.ex}>{SkillData[index].ex}</span>
                 </div>
             </div>
         </div>

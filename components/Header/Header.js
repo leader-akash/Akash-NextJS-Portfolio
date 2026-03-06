@@ -41,7 +41,7 @@ const Header = () => {
                 document.documentElement.style.overflowY = 'overlay'
             }
         }
-        media.addListener((e) => handleMatch(e.matches));
+        media.addEventListener('change', (e) => handleMatch(e.matches));
         handleMatch(media.matches);
 
 
@@ -76,33 +76,31 @@ const Header = () => {
             const tl = gsap.timeline();
             tl.from('.ad_logo', .4, {
                 y: -40,
-                autoAlpha: 0,
-                stagger: 0.2,
                 ease: "power4.out",
-                delay: 3
-            }).from('.mb_nav', .5, {
+                delay: 0.3
+            }).from('.mb_nav', .4, {
                 y: -20,
-                autoAlpha: 0,
                 ease: "power4.out",
-                stagger: 0.2,
-                delay: -0.7
+                stagger: 0.15,
+                delay: -0.5
             })
         } else {
             const tl = gsap.timeline();
             tl.from('.ad_logo', .4, {
-
                 y: '-40px',
-                autoAlpha: 0,
                 ease: "power4.out",
-                delay: 5
-            }).from('.p-link', .5, {
+                delay: 0.3
+            }).from('.p-link', .3, {
                 y: '-10px',
-                autoAlpha: 0,
-                delay: -0.7,
+                delay: -0.2,
                 ease: "power4.out",
-                stagger: 0.2
-            })
-
+                stagger: 0.08
+            }).from(`.${styles.desktop_nav} button`, .25, {
+                y: -8,
+                delay: -0.15,
+                stagger: 0.04,
+                ease: "power3.out"
+            }, '-=0.2')
         }
 
         ScrollTrigger.saveStyles(["#nav_con"])
@@ -120,19 +118,11 @@ const Header = () => {
                         <Logo />
                     </div>
                     <div className={styles.links} id='links'>
-                        <Link href="https://www.linkedin.com/in/hi-akash/">
-                            <a target="_blank" className='p-link'><RiLinkedinLine /></a>
-                        </Link>
+                        <Link href="https://www.linkedin.com/in/hi-akash/" target="_blank" rel="noopener noreferrer" className='p-link'><RiLinkedinLine /></Link>
                         {/* <Link href="/projects"> */}
-                        <Link href="https://github.com/leader-akash">
-                            <a target="_blank" className='p-link'><FiGithub /></a>
-                        </Link>
-                        <Link href="https://twitter.com/AkashAk50675432">
-                            <a target="_blank" className='p-link'><RiTwitterLine /></a>
-                        </Link>
-                        <Link href="mailto:leader.akashak@gmail.com">
-                            <a target="_blank" className='p-link'><HiOutlineMail /></a>
-                        </Link>
+                        <Link href="https://github.com/leader-akash" target="_blank" rel="noopener noreferrer" className='p-link'><FiGithub /></Link>
+                        <Link href="https://twitter.com/AkashAk50675432" target="_blank" rel="noopener noreferrer" className='p-link'><RiTwitterLine /></Link>
+                        <Link href="mailto:leader.akashak@gmail.com" target="_blank" rel="noopener noreferrer" className='p-link'><HiOutlineMail /></Link>
                         {/* </Link> */}
                         <input
                             id={styles.themeSwitcher}
@@ -173,13 +163,11 @@ const Header = () => {
                         <li onClick={() => navToggle(sectionRefs[5])}><a id="6" ref={(el) => mobNavRef[5] = el} ><FiMessageCircle />Contact</a></li>
                     </ul>
                     <div className={styles.mb_links}>
-                        <Link href="https://www.linkedin.com/in/hi-akash/">
-                            <a target="_blank" className='mb-link'><RiLinkedinLine /></a>
-                        </Link>
+                        <Link href="https://www.linkedin.com/in/hi-akash/" target="_blank" rel="noopener noreferrer" className='mb-link'><RiLinkedinLine /></Link>
                         {/* <Link href="/projects"> */}
-                        <a className='mb-link' href="https://github.com/leader-akash"><FiGithub /></a>
-                        <a className='mb-link' href="https://twitter.com/AkashAk50675432"><RiTwitterLine /></a>
-                        <a className='mb-link' href="mailto:leader.akashak@gmail.com"><HiOutlineMail /></a>
+                        <Link href="https://github.com/leader-akash" target="_blank" rel="noopener noreferrer" className='mb-link'><FiGithub /></Link>
+                        <Link href="https://twitter.com/AkashAk50675432" target="_blank" rel="noopener noreferrer" className='mb-link'><RiTwitterLine /></Link>
+                        <Link href="mailto:leader.akashak@gmail.com" target="_blank" rel="noopener noreferrer" className='mb-link'><HiOutlineMail /></Link>
                     </div>
                 </div>
             </div>

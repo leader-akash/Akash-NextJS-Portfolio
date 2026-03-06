@@ -55,15 +55,15 @@ const FourthSection = () => {
                     <p>{skillInfo.info}</p>
                     <div className={styles.info}>
                         <div className={styles.stars}>
-                            <label>Confidence:</label>
-                            <span className='star_con'>
+                            <label>Confidence</label>
+                            <span style={{ display: 'flex' }}>
                                 {loadStars(skillInfo.stars)}
                             </span>
                         </div>
-                        <div>
+                        {/* <div>
                             <label>Experience:</label>
                             <span className={styles.ex}>{skillInfo.ex}</span>
-                        </div>
+                        </div> */}
                     </div>
                     <span className={styles.tag}>growing more</span>
                 </div>

@@ -52,12 +52,12 @@ const SecondSection = () => {
                 </div>
             </div>
             <div className={styles.mid}>
-                <DashL className={styles.dash_path} />
+                <DashL className={styles.dash_path + ' left_dash'} />
                 <div className={styles.lottie} id='lottie'>
                     <h4>How i deliver!</h4>
                     {screen.width > 849 && <Lottie options={lottieOption} height={650} width={650} />}
                 </div>
-                <DashR className={styles.dash_path} />
+                <DashR className={styles.dash_path + ' right_dash'} />
             </div>
             <div className={styles.right} id="right_card_col">
                 <div className={styles.card + ' top_cards mb_cards'}>
@@ -86,66 +86,31 @@ const scrollAnimation = (screen) => {
         scrollTrigger: {
             trigger: '#section2',
             start: `top ${screen == 'tablet' ? 'top+=60' : 'top'}`,
-            end: '+=600',
+            end: '+=400',
             pin: true,
-            scrub: 0.5,
+            scrub: 1.2,
             anticipatePin: 1
         }
     });
     tl.to('#lottie', {
-        scale: .85,
-        duration: 0.4,
-    }, '-=1').from('.left_dash', {
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.2,
-        ease: 'power4.out'
-    }, '-=1').from('.right_dash', {
-        opacity: 0,
-        stagger: 0.1,
-        delay: -1.9,
-        duration: 0.2,
-        ease: 'power4.out'
-    }, '-=1').from('.top_cards', {
-        scale: 0.5,
-        autoAlpha: 0,
-        duration: 0.5,
-    }, '-=0.90').from('.bottom_cards', {
-        scale: 0.5,
-        autoAlpha: 0,
-        duration: 0.5,
-    }, '-=0.30')
+        scale: .9,
+        duration: 0.35,
+    }, 0)
 }
 
 function mbScrollAnimation() {
-    const tl = gsap.timeline()
-    tl.from('#lottie_an', {
+    gsap.from('#lottie_an', {
         autoAlpha: 0,
-        scale: .8,
-        y: 50,
+        scale: .95,
+        y: 20,
         ease: 'power3.easeOut',
         scrollTrigger: {
             trigger: '#lottie_an',
             start: 'top bottom-=100',
-            end: '+=90',
-            scrub: 1,
+            end: '+=80',
+            scrub: 1.5,
         }
     })
-    const cards = gsap.utils.toArray('.mb_cards')
-    cards.forEach((card) => {
-        tl.from(card, {
-            autoAlpha: 0,
-            scale: .9,
-            y: 50,
-            ease: 'power3.easeOut',
-            scrollTrigger: {
-                trigger: card,
-                start: 'top bottom',
-                end: '+=50',
-                scrub: 1,
-            }
-        })
-    })
-
+    // Cards (data) stay visible – no scroll hide so content is always shown
 }
 export default SecondSection

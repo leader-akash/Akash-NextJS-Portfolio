@@ -15,6 +15,12 @@
         flex-wrap: wrap;
         margin-bottom: 4em;
     }
+    .top_cards,
+    .bottom_cards,
+    .mb_cards {
+        opacity: 1;
+        visibility: visible;
+    }
     .card {
         padding: 1.4em;
         margin: 4em 2em;
@@ -89,15 +95,24 @@
         .dash_path {
             fill: get(arrow-color);
             position: absolute;
-            z-index: -1;
+            z-index: 1;
             top: 50%;
             left: -50%;
             width: 80%;
             transform: translate(0, -50%);
+            pointer-events: none;
             &:last-child {
                 left: unset;
                 right: -51%;
             }
+            path {
+                opacity: 1;
+            }
         }
     }
+}
+/* Dashed lines visible; scroll animation can still stagger them in if desired */
+.left_dash,
+.right_dash {
+    opacity: 1;
 }

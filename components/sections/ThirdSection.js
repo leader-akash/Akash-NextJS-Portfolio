@@ -10,21 +10,36 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 const ThirdSection = () => {
 
     useEffect(() => {
-        let el = document.querySelector('#path_line');
-        let mb_el = document.querySelector('#pathMB');
-        let len = el.getTotalLength()
-        let mb_len = mb_el.getTotalLength()
-        el.style.strokeDasharray = len
-        mb_el.style.strokeDasharray = mb_len
-        el.style.strokeDashoffset = len
-        mb_el.style.strokeDashoffset = mb_len
+        // Defer so SVG elements from Path/PathMB components are in the DOM (and IDs are available)
+        const setupPaths = () => {
+            let el = document.querySelector('#path_line') || document.querySelector(`.${styles.path} path`);
+            let mb_el = document.querySelector('#pathMB') || document.querySelector(`.${styles.pathMB} path`);
+            if (el && typeof el.getTotalLength === 'function') {
+                el.id = el.id || 'path_line';
+                let len = el.getTotalLength();
+                el.style.strokeDasharray = len;
+                el.style.strokeDashoffset = len;
+            }
+            if (mb_el && typeof mb_el.getTotalLength === 'function') {
+                mb_el.id = mb_el.id || 'pathMB';
+                let mb_len = mb_el.getTotalLength();
+                mb_el.style.strokeDasharray = mb_len;
+                mb_el.style.strokeDashoffset = mb_len;
+            }
+        };
+        setupPaths();
+        const t = requestAnimationFrame(() => {
+            setupPaths();
+        });
 
-        ScrollTrigger.saveStyles(['.point', '.path_info', '#guy', '#secBlob'])
+        ScrollTrigger.saveStyles(['.point', '.path_info', '#guy', '#secBlob']);
         ScrollTrigger.matchMedia({
             "(min-width:1131px)": () => scrollAnimation(),
             "(min-width:850px) and (max-width:1130px)": () => scrollAnimation("tablet"),
             "(max-width:849px)": () => mbScrollAnimation(),
-        })
+        });
+
+        return () => cancelAnimationFrame(t);
     }, [])
     return (
         <section ref={(el) => sectionRefs[1] = el} className={styles.container} id='section3'>
@@ -34,15 +49,15 @@ const ThirdSection = () => {
                 <Path className={styles.path} />
                 <div className={styles.info + ' path_info'}>
                     <span>2022</span>
-                    <p>Joined AccioJob Coding Bootcamp</p>
-                </div>
-                <div className={styles.info + ' path_info'}>
-                    {/* <span>2023</span>
-                    <p>Started working as a Frontend Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p> */}
+                    <p>Joined AccioJob as MERN Stack Developer</p>
                 </div>
                 <div className={styles.info + ' path_info'}>
                     <span>2023</span>
-                    <p>Started working as a Frontend Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p>
+                    <p>Started working as a MERN Stack Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p>
+                </div>
+                <div className={styles.info + ' path_info'}>
+                    <span>2024</span>
+                    <p>Software Engineer at <a href='https://itechnolabs.ca/' target='_blank' rel='noopener noreferrer'>iTechnolabs</a></p>
                 </div>
             </div>
 
