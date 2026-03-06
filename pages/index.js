@@ -67,7 +67,7 @@ export default function Home() {
                         <SecondSection />
                         <ThirdSection />
                         <div id="section4">
-                            {!mobileView && <FourthSection />}
+                            {/* {!mobileView && <FourthSection />} */}
                             {mobileView && <FourthSectionMB />}
                         </div>
                         <FifthSection />

@@ -11,6 +11,7 @@ const FourthSection = () => {
         name: "React JS",
         info: "Powerful modern frontend framework for building single page application",
         stars: "4.5",
+        ex: "2 years building and debugging",
     })
     useEffect(() => {
         const skillClickTimeline = skillClickAnimation()
@@ -59,6 +60,10 @@ const FourthSection = () => {
                                 {loadStars(skillInfo.stars)}
                             </span>
                         </div>
+                        {/* <div>
+                            <label>Experience:</label>
+                            <span className={styles.ex}>{skillInfo.ex}</span>
+                        </div> */}
                     </div>
                     <span className={styles.tag}>growing more</span>
                 </div>
@@ -73,6 +78,7 @@ function skillClickAnimation() {
     const tl = gsap.timeline({ paused: true })
     tl.to(`.${styles.text} h2,
         .${styles.text} p,
+        .${styles.ex},
         .star_con`, {
         yPercent: 20,
         autoAlpha: 0,
@@ -105,9 +111,7 @@ function scrollAnimation() {
             if (activeSkill) {
                 activeSkill.classList.add(skillCSS.active)
             } else {
-                const skillEls = document.querySelectorAll(`.${skillClass}`)
-                const ninth = skillEls[8]
-                if (ninth) ninth.classList.add(skillCSS.active)
+                document.querySelectorAll(`.${skillClass}`)[8].classList.add(skillCSS.active)
             }
         },
         scrollTrigger: {
