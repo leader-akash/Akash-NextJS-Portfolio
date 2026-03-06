@@ -54,17 +54,58 @@
                     display: flex;
                     align-items: center;
                     svg {
-                        font-size: 3em;
-                        margin-right: 15px;
+                        font-size: 2.5em;
+                        margin-right: 12px;
+                        color: #fff;
                     }
                     span {
-                        font-size: 2em;
+                        font-size: 1.6em;
                         font-weight: 600;
+                        color: #fff;
                     }
                 }
                 p {
-                    font-size: 1.2em;
-                    color: #d8d8d8;
+                    font-size: 1.05em;
+                    color: rgba(255, 255, 255, 0.95);
+                    line-height: 1.35;
+                }
+                .rating {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4em;
+                    margin-top: 0.6em;
+                }
+                .stars {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 0.35em;
+                    label {
+                        display: block;
+                        font-size: 0.9em;
+                        color: rgba(255, 255, 255, 0.9);
+                        margin-bottom: 0;
+                    }
+                    .star_con {
+                        display: inline-flex;
+                        flex-direction: row;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 2px;
+                        line-height: 1;
+                    }
+                    svg {
+                        color: #fff !important;
+                        width: clamp(12px, 4vw, 18px);
+                        height: auto;
+                        min-width: 12px;
+                        flex-shrink: 0;
+                    }
+                }
+                .rating > div:last-child {
+                    label { color: rgba(255, 255, 255, 0.9); font-size: 0.9em; }
+                    .ex { color: #fff; font-size: 0.95em; }
                 }
             }
         }

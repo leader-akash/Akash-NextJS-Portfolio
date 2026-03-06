@@ -76,33 +76,31 @@ const Header = () => {
             const tl = gsap.timeline();
             tl.from('.ad_logo', .4, {
                 y: -40,
-                autoAlpha: 0,
-                stagger: 0.2,
                 ease: "power4.out",
-                delay: 3
-            }).from('.mb_nav', .5, {
+                delay: 0.3
+            }).from('.mb_nav', .4, {
                 y: -20,
-                autoAlpha: 0,
                 ease: "power4.out",
-                stagger: 0.2,
-                delay: -0.7
+                stagger: 0.15,
+                delay: -0.5
             })
         } else {
             const tl = gsap.timeline();
             tl.from('.ad_logo', .4, {
-
                 y: '-40px',
-                autoAlpha: 0,
                 ease: "power4.out",
-                delay: 5
-            }).from('.p-link', .5, {
+                delay: 0.3
+            }).from('.p-link', .3, {
                 y: '-10px',
-                autoAlpha: 0,
-                delay: -0.7,
+                delay: -0.2,
                 ease: "power4.out",
-                stagger: 0.2
-            })
-
+                stagger: 0.08
+            }).from(`.${styles.desktop_nav} button`, .25, {
+                y: -8,
+                delay: -0.15,
+                stagger: 0.04,
+                ease: "power3.out"
+            }, '-=0.2')
         }
 
         ScrollTrigger.saveStyles(["#nav_con"])

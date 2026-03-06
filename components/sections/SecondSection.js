@@ -52,12 +52,12 @@ const SecondSection = () => {
                 </div>
             </div>
             <div className={styles.mid}>
-                <DashL className={styles.dash_path} />
+                <DashL className={styles.dash_path + ' left_dash'} />
                 <div className={styles.lottie} id='lottie'>
                     <h4>How i deliver!</h4>
                     {screen.width > 849 && <Lottie options={lottieOption} height={650} width={650} />}
                 </div>
-                <DashR className={styles.dash_path} />
+                <DashR className={styles.dash_path + ' right_dash'} />
             </div>
             <div className={styles.right} id="right_card_col">
                 <div className={styles.card + ' top_cards mb_cards'}>
@@ -95,17 +95,6 @@ const scrollAnimation = (screen) => {
     tl.to('#lottie', {
         scale: .85,
         duration: 0.4,
-    }, '-=1').to('.left_dash', {
-        opacity: 1,
-        stagger: 0.02,
-        duration: 0.35,
-        ease: 'power2.out',
-    }, '-=1').to('.right_dash', {
-        opacity: 1,
-        stagger: 0.02,
-        delay: -1.9,
-        duration: 0.35,
-        ease: 'power2.out',
     }, '-=1').from('.top_cards', {
         scale: 0.5,
         autoAlpha: 0,

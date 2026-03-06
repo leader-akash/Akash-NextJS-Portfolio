@@ -89,23 +89,24 @@
         .dash_path {
             fill: get(arrow-color);
             position: absolute;
-            z-index: -1;
+            z-index: 1;
             top: 50%;
             left: -50%;
             width: 80%;
             transform: translate(0, -50%);
+            pointer-events: none;
             &:last-child {
                 left: unset;
                 right: -51%;
             }
             path {
-                opacity: 0;
+                opacity: 1;
             }
         }
     }
 }
-/* Dashed lines animate in on scroll – ScrollTrigger reveals .left_dash / .right_dash */
+/* Dashed lines visible; scroll animation can still stagger them in if desired */
 .left_dash,
 .right_dash {
-    opacity: 0;
+    opacity: 1;
 }

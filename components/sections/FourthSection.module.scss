@@ -68,6 +68,8 @@
             }
             .info {
                 display: inline-flex;
+                flex-wrap: wrap;
+                gap: 0 1.5em;
                 label {
                     display: block;
                     font-weight: 700;
@@ -81,9 +83,24 @@
                 }
                 .stars {
                     margin-right: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 0.4em;
+                    .star_con {
+                        display: inline-flex;
+                        flex-direction: row;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 2px;
+                    }
                     svg {
-                        margin-right: 2px;
+                        margin-right: 0;
                         color: #ef9824;
+                        width: clamp(14px, 1.1em, 18px);
+                        height: auto;
+                        flex-shrink: 0;
                     }
                 }
             }

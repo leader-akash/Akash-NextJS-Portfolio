@@ -49,15 +49,15 @@ const ThirdSection = () => {
                 <Path className={styles.path} />
                 <div className={styles.info + ' path_info'}>
                     <span>2022</span>
-                    <p>Joined AccioJob Coding Bootcamp</p>
-                </div>
-                <div className={styles.info + ' path_info'}>
-                    {/* <span>2023</span>
-                    <p>Started working as a Frontend Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p> */}
+                    <p>Joined AccioJob as MERN Stack Developer</p>
                 </div>
                 <div className={styles.info + ' path_info'}>
                     <span>2023</span>
-                    <p>Started working as a Frontend Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p>
+                    <p>Started working as a MERN Stack Developer at  <a href='https://digimantralabs.com/'>DigiMantra Labs</a></p>
+                </div>
+                <div className={styles.info + ' path_info'}>
+                    <span>2024</span>
+                    <p>Software Engineer at <a href='https://itechnolabs.ca/' target='_blank' rel='noopener noreferrer'>iTechnolabs</a></p>
                 </div>
             </div>
 

@@ -22,13 +22,9 @@ export default function Home() {
         document.body.style.transition = '.2s'
         const media = window.matchMedia('(max-width:850px)')
         if (media.matches) {
-            setTimeout(() => {
-                setLoad(true)
-            }, 4800)
+            setTimeout(() => setLoad(true), 3000)
         } else {
-            setTimeout(() => {
-                setLoad(true)
-            }, 4200);
+            setTimeout(() => setLoad(true), 2500)
         }
 
         function handleMatch(matches) {
@@ -68,15 +64,15 @@ export default function Home() {
                     </div>
                     <div className={styles.body__main}>
                         <FirstSection load={load} />
-                        {load && <SecondSection />}
-                        {load && <ThirdSection />}
+                        <SecondSection />
+                        <ThirdSection />
                         <div id="section4">
-                            {load && !mobileView && <FourthSection />}
-                            {load && mobileView && <FourthSectionMB />}
+                            {!mobileView && <FourthSection />}
+                            {mobileView && <FourthSectionMB />}
                         </div>
-                        {load && <FifthSection />}
-                        {load && <SixthSection />}
-                        {/* {load && <SeventhSection />} */}
+                        <FifthSection />
+                        <SixthSection />
+                        {/* <SeventhSection /> */}
                     </div>
                 </div>
             </div>
